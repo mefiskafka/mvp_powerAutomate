@@ -1,0 +1,8 @@
+{
+  "status": "success",
+  "message": "Permiso PER-001245 procesado correctamente.",
+  "process_id": "20260721-205204",
+  "folio": "PER-001245",
+  "output_pdf": "/home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-001245_20260721-205204.pdf",
+  "errors": []
+}

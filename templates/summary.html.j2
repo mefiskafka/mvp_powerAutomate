@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Resumen de Permiso {{ dto.folio }}</title>
+  <style>
+    @page { size: A4; margin: 2cm; }
+    body { font-family: "Helvetica", "Arial", sans-serif; color: #1a1a1a; font-size: 12px; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    .status { font-size: 14px; font-weight: bold; padding: 6px 0; }
+    .status.ok { color: #15803d; }
+    .status.err { color: #b91c1c; }
+    .meta { color: #666; font-size: 11px; margin-bottom: 18px; }
+    h2 { font-size: 15px; background: #ebebeb; padding: 6px 8px; margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+    td { padding: 5px 8px; vertical-align: top; }
+    td.label { font-weight: bold; width: 40%; }
+    ul { margin: 4px 0 4px 18px; }
+    .issue { margin: 6px 0; }
+    .issue .tag { font-weight: bold; color: #b91c1c; }
+    .ok-msg { color: #15803d; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Resumen de Procesamiento de Permiso</h1>
+  {% if is_valid %}
+    <div class="status ok">Estado: PROCESADO CORRECTAMENTE</div>
+  {% else %}
+    <div class="status err">Estado: RECHAZADO POR VALIDACIONES</div>
+  {% endif %}
+  <div class="meta">
+    Número de proceso: {{ process_id }}<br />
+    Fecha de procesamiento: {{ processed_at }}
+  </div>
+
+  <h2>Información del permiso</h2>
+  <table>
+    <tr><td class="label">Folio</td><td>{{ dto.folio or "-" }}</td></tr>
+    <tr><td class="label">Empresa</td><td>{{ dto.empresa or "-" }}</td></tr>
+    <tr><td class="label">Fecha inicio</td><td>{{ dto.fecha_inicio or "-" }}</td></tr>
+    <tr><td class="label">Fecha fin</td><td>{{ dto.fecha_fin or "-" }}</td></tr>
+    <tr><td class="label">Vehículo</td><td>{{ "Sí" if dto.vehiculo else "No" }}</td></tr>
+    <tr><td class="label">Placas</td><td>{{ dto.placas or "-" }}</td></tr>
+    <tr><td class="label">Cantidad de personas</td><td>{{ dto.personas|length }}</td></tr>
+  </table>
+  {% if dto.personas %}
+    <ul>
+      {% for persona in dto.personas %}<li>{{ persona }}</li>{% endfor %}
+    </ul>
+  {% endif %}
+
+  <h2>Resultado de validaciones</h2>
+  {% if is_valid %}
+    <p class="ok-msg">Todas las validaciones se cumplieron.</p>
+  {% else %}
+    <p class="err">Se encontraron {{ issues|length }} error(es):</p>
+    {% for issue in issues %}
+      <div class="issue">
+        <span class="tag">[{{ issue.campo }}] {{ issue.regla }}</span><br />
+        {{ issue.detalle }}
+      </div>
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

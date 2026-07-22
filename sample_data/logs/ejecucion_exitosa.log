@@ -1,0 +1,7 @@
+2026-07-21 20:52:04 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205204 para sample_data/pdfs/permiso_ejemplo.pdf
+2026-07-21 20:52:04 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-001245_20260721-205204.pdf
+2026-07-21 20:52:04 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-001245 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 20:52:04 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-205204]
+2026-07-21 20:52:05 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205205 para sample_data/pdfs/permiso_invalido.pdf
+2026-07-21 20:52:05 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-009999_20260721-205205.pdf
+2026-07-21 20:52:05 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-205205]: 2 fallo(s) de validación

@@ -1,0 +1,19 @@
+{
+  "status": "validation_error",
+  "message": "El permiso no pasó las validaciones. No se actualizó el Excel.",
+  "process_id": "20260721-205205",
+  "folio": "PER-009999",
+  "output_pdf": "/home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-009999_20260721-205205.pdf",
+  "errors": [
+    {
+      "campo": "fechas",
+      "regla": "rango",
+      "detalle": "La fecha de inicio (2026-02-20) debe ser anterior a la fecha de fin (2026-02-10)."
+    },
+    {
+      "campo": "placas",
+      "regla": "condicional",
+      "detalle": "Las placas son obligatorias cuando el permiso incluye vehículo."
+    }
+  ]
+}

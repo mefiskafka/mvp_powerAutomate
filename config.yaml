@@ -1,0 +1,44 @@
+# =====================================================================
+# Configuración de la aplicación (NO secretos).
+# Rutas relativas se resuelven contra la raíz del proyecto.
+# Los secretos y overrides por entorno van en .env (ver .env.example).
+# =====================================================================
+
+app:
+  name: "permits-rpa"
+  environment: "local"        # local | dev | prod
+
+paths:
+  # Archivo Excel maestro donde se registran los permisos procesados.
+  excel_file: "data/permisos.xlsx"
+  # Carpeta donde se depositan los PDF resumen generados.
+  output_dir: "sample_data/expected_output"
+  # Carpeta de logs (rotación diaria).
+  logs_dir: "logs"
+  # Plantillas Jinja2/HTML para el renderer WeasyPrint.
+  templates_dir: "templates"
+
+excel:
+  sheet_name: "Permisos"
+  headers:
+    - "Fecha proceso"
+    - "Folio"
+    - "Empresa"
+    - "Fecha Inicio"
+    - "Fecha Fin"
+    - "Vehículo"
+    - "Placas"
+    - "Cantidad Personas"
+    - "Estado"
+    - "Observaciones"
+
+pdf:
+  # Estrategia de renderizado: "fpdf2" (portable, sin dependencias del SO)
+  # o "weasyprint" (alta calidad, requiere GTK/Pango instalado).
+  renderer: "fpdf2"
+
+logging:
+  level: "INFO"               # DEBUG | INFO | WARNING | ERROR
+  # Nombre base de los archivos de log; se sufija con la fecha (YYYY-MM-DD).
+  file_prefix: "permits"
+  console: true

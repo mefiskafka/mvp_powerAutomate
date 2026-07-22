@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Config con secretos
+.env
+
+# Salidas de ejecución (se regeneran)
+logs/*.log
+logs/*.jsonl
+data/*.xlsx
+!data/.gitkeep
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# NO ignorar los insumos del MVP (deben viajar con el repo)
+!sample_data/**

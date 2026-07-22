@@ -1,0 +1,146 @@
+2026-07-21 20:49:58 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-204958 para sample_data/pdfs/permiso_ejemplo.pdf
+2026-07-21 20:49:58 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-001245_20260721-204958.pdf
+2026-07-21 20:49:58 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-001245 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 20:49:58 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-204958]
+2026-07-21 20:50:06 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205006 para sample_data/pdfs/permiso_invalido.pdf
+2026-07-21 20:50:06 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-009999_20260721-205006.pdf
+2026-07-21 20:50:06 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-205006]: 2 fallo(s) de validación
+2026-07-21 20:52:04 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205204 para sample_data/pdfs/permiso_ejemplo.pdf
+2026-07-21 20:52:04 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-001245_20260721-205204.pdf
+2026-07-21 20:52:04 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-001245 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 20:52:04 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-205204]
+2026-07-21 20:52:05 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205205 para sample_data/pdfs/permiso_invalido.pdf
+2026-07-21 20:52:05 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-009999_20260721-205205.pdf
+2026-07-21 20:52:05 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-205205]: 2 fallo(s) de validación
+2026-07-21 20:59:45 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205945 para /tmp/pytest-of-kyvo/pytest-4/test_process_by_path_success0/ok.pdf
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-205945.pdf
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-205945]
+2026-07-21 20:59:45 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205945 para /tmp/pytest-of-kyvo/pytest-4/test_process_by_path_validatio0/bad.pdf
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/SIN_FOLIO_20260721-205945.pdf
+2026-07-21 20:59:45 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-205945]: 5 fallo(s) de validación
+2026-07-21 20:59:45 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205945 para no/existe.pdf
+2026-07-21 20:59:45 | ERROR    | permits.application.use_cases.process_permit | Fallo de extracción [20260721-205945]: El PDF no existe: no/existe.pdf
+2026-07-21 20:59:45 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 500 Internal Server Error"
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205945 para /tmp/tmptqea_jwi.pdf
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-205945.pdf
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-205945]
+2026-07-21 20:59:45 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process/upload "HTTP/1.1 200 OK"
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205945 para /tmp/pytest-of-kyvo/pytest-4/test_cli_and_api_share_contrac0/ok.pdf
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-205945.pdf
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-205945]
+2026-07-21 20:59:45 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-777 (/tmp/pytest-of-kyvo/pytest-4/test_creates_file_with_headers0/out/permisos.xlsx)
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-1 (/tmp/pytest-of-kyvo/pytest-4/test_appends_second_row0/permisos.xlsx)
+2026-07-21 20:59:45 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-1 (/tmp/pytest-of-kyvo/pytest-4/test_appends_second_row0/permisos.xlsx)
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-4/test_valid_permit_persists_and0/x.pdf
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-120000]
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-4/test_invalid_permit_does_not_p0/x.pdf
+2026-07-21 20:59:45 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-120000]: 2 fallo(s) de validación
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-4/test_pdf_generated_for_both_pa0/x.pdf
+2026-07-21 20:59:45 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-120000]
+2026-07-21 20:59:53 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205953 para /tmp/pytest-of-kyvo/pytest-5/test_process_by_path_success0/ok.pdf
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-205953.pdf
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-205953]
+2026-07-21 20:59:53 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205953 para /tmp/pytest-of-kyvo/pytest-5/test_process_by_path_validatio0/bad.pdf
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/SIN_FOLIO_20260721-205953.pdf
+2026-07-21 20:59:53 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-205953]: 5 fallo(s) de validación
+2026-07-21 20:59:53 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205953 para no/existe.pdf
+2026-07-21 20:59:53 | ERROR    | permits.application.use_cases.process_permit | Fallo de extracción [20260721-205953]: El PDF no existe: no/existe.pdf
+2026-07-21 20:59:53 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 500 Internal Server Error"
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205953 para /tmp/tmpt3rvrs8z.pdf
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-205953.pdf
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-205953]
+2026-07-21 20:59:53 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process/upload "HTTP/1.1 200 OK"
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-205953 para /tmp/pytest-of-kyvo/pytest-5/test_cli_and_api_share_contrac0/ok.pdf
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-205953.pdf
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-205953]
+2026-07-21 20:59:53 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-777 (/tmp/pytest-of-kyvo/pytest-5/test_creates_file_with_headers0/out/permisos.xlsx)
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-1 (/tmp/pytest-of-kyvo/pytest-5/test_appends_second_row0/permisos.xlsx)
+2026-07-21 20:59:53 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-1 (/tmp/pytest-of-kyvo/pytest-5/test_appends_second_row0/permisos.xlsx)
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-5/test_valid_permit_persists_and0/x.pdf
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-120000]
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-5/test_invalid_permit_does_not_p0/x.pdf
+2026-07-21 20:59:53 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-120000]: 2 fallo(s) de validación
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-5/test_pdf_generated_for_both_pa0/x.pdf
+2026-07-21 20:59:53 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-120000]
+2026-07-21 21:00:15 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-210015 para sample_data/pdfs/permiso_ejemplo.pdf
+2026-07-21 21:00:15 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-001245_20260721-210015.pdf
+2026-07-21 21:00:15 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-001245 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 21:00:15 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-210015]
+2026-07-21 21:02:10 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-210210 para /tmp/pytest-of-kyvo/pytest-6/test_process_by_path_success0/ok.pdf
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-210210.pdf
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-210210]
+2026-07-21 21:02:10 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-210210 para /tmp/pytest-of-kyvo/pytest-6/test_process_by_path_validatio0/bad.pdf
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/SIN_FOLIO_20260721-210210.pdf
+2026-07-21 21:02:10 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-210210]: 5 fallo(s) de validación
+2026-07-21 21:02:10 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-210210 para no/existe.pdf
+2026-07-21 21:02:10 | ERROR    | permits.application.use_cases.process_permit | Fallo de extracción [20260721-210210]: El PDF no existe: no/existe.pdf
+2026-07-21 21:02:10 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 500 Internal Server Error"
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-210210 para /tmp/tmpsud8vqcy.pdf
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-210210.pdf
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-210210]
+2026-07-21 21:02:10 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process/upload "HTTP/1.1 200 OK"
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-210210 para /tmp/pytest-of-kyvo/pytest-6/test_cli_and_api_share_contrac0/ok.pdf
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-210210.pdf
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-210210]
+2026-07-21 21:02:10 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-777 (/tmp/pytest-of-kyvo/pytest-6/test_creates_file_with_headers0/out/permisos.xlsx)
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-1 (/tmp/pytest-of-kyvo/pytest-6/test_appends_second_row0/permisos.xlsx)
+2026-07-21 21:02:10 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-1 (/tmp/pytest-of-kyvo/pytest-6/test_appends_second_row0/permisos.xlsx)
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-6/test_valid_permit_persists_and0/x.pdf
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-120000]
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-6/test_invalid_permit_does_not_p0/x.pdf
+2026-07-21 21:02:10 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-120000]: 2 fallo(s) de validación
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-6/test_pdf_generated_for_both_pa0/x.pdf
+2026-07-21 21:02:10 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-120000]
+2026-07-21 21:26:14 | INFO     | httpx | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-21 21:26:14 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-212614 para /tmp/pytest-of-kyvo/pytest-7/test_process_by_path_success0/ok.pdf
+2026-07-21 21:26:14 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-212614.pdf
+2026-07-21 21:26:14 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 21:26:14 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-212614]
+2026-07-21 21:26:14 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 21:26:14 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-212614 para /tmp/pytest-of-kyvo/pytest-7/test_process_by_path_validatio0/bad.pdf
+2026-07-21 21:26:14 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/SIN_FOLIO_20260721-212614.pdf
+2026-07-21 21:26:14 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-212614]: 5 fallo(s) de validación
+2026-07-21 21:26:14 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 21:26:14 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-212614 para no/existe.pdf
+2026-07-21 21:26:14 | ERROR    | permits.application.use_cases.process_permit | Fallo de extracción [20260721-212614]: El PDF no existe: no/existe.pdf
+2026-07-21 21:26:14 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 500 Internal Server Error"
+2026-07-21 21:26:14 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-212614 para /tmp/tmp6jflqdx0.pdf
+2026-07-21 21:26:14 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-212614.pdf
+2026-07-21 21:26:14 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 21:26:14 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-212614]
+2026-07-21 21:26:14 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process/upload "HTTP/1.1 200 OK"
+2026-07-21 21:26:14 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-212614 para /tmp/pytest-of-kyvo/pytest-7/test_cli_and_api_share_contrac0/ok.pdf
+2026-07-21 21:26:14 | INFO     | permits.infrastructure.rendering.fpdf2_renderer | PDF generado (fpdf2): /home/kyvo/00_repos/mvp_powerAutomate/sample_data/expected_output/PER-API-1_20260721-212614.pdf
+2026-07-21 21:26:14 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-API-1 (/home/kyvo/00_repos/mvp_powerAutomate/data/permisos.xlsx)
+2026-07-21 21:26:14 | INFO     | permits.application.use_cases.process_permit | Permiso PER-API-1 procesado correctamente [20260721-212614]
+2026-07-21 21:26:14 | INFO     | httpx | HTTP Request: POST http://testserver/api/v1/permits/process "HTTP/1.1 200 OK"
+2026-07-21 21:26:14 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-777 (/tmp/pytest-of-kyvo/pytest-7/test_creates_file_with_headers0/out/permisos.xlsx)
+2026-07-21 21:26:15 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-1 (/tmp/pytest-of-kyvo/pytest-7/test_appends_second_row0/permisos.xlsx)
+2026-07-21 21:26:15 | INFO     | permits.infrastructure.persistence.excel_permit_repository | Fila agregada a Excel: PER-1 (/tmp/pytest-of-kyvo/pytest-7/test_appends_second_row0/permisos.xlsx)
+2026-07-21 21:26:15 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-7/test_valid_permit_persists_and0/x.pdf
+2026-07-21 21:26:15 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-120000]
+2026-07-21 21:26:15 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-7/test_invalid_permit_does_not_p0/x.pdf
+2026-07-21 21:26:15 | WARNING  | permits.application.use_cases.process_permit | Permiso inválido [20260721-120000]: 2 fallo(s) de validación
+2026-07-21 21:26:15 | INFO     | permits.application.use_cases.process_permit | Iniciando procesamiento 20260721-120000 para /tmp/pytest-of-kyvo/pytest-7/test_pdf_generated_for_both_pa0/x.pdf
+2026-07-21 21:26:15 | INFO     | permits.application.use_cases.process_permit | Permiso PER-001245 procesado correctamente [20260721-120000]
