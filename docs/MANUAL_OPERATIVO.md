@@ -103,7 +103,7 @@ En `config.yaml`:
 ```yaml
 pdf:
   renderer: "fpdf2"        # portable (default)
-  # renderer: "weasyprint" # alta calidad; requiere GTK (RUNBOOK §1.3)
+  # renderer: "weasyprint" # alta calidad; requiere GTK (RUNBOOK §1.4)
 ```
 
 ## 7. Preguntas frecuentes

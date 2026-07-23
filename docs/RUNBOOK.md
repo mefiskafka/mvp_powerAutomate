@@ -39,7 +39,25 @@ Después: construir el flujo PAD según [power_automate/FLOW.md](../power_automa
 
 Igual, con `source .venv/bin/activate` y rutas con `/`.
 
-### 1.3 (Opcional) WeasyPrint en Windows
+### 1.3 Docker (alternativa encapsulada)
+
+Requiere Docker + Docker Compose (en Windows: Docker Desktop).
+
+```bash
+git clone <url-del-repo> && cd mvp_powerAutomate
+docker compose up -d                  # API en http://localhost:8000/docs
+docker compose run --rm cli process --pdf sample_data/pdfs/permiso_ejemplo.pdf
+docker compose --profile test run --rm tests
+docker compose down                   # detener (los datos persisten en el host)
+```
+
+- Puerto ocupado: `PERMITS_API_PORT=8010 docker compose up -d`.
+- Excel, logs y PDFs generados quedan en `data/`, `logs/` y `sample_data/`
+  del host (volúmenes).
+- PAD consume `http://localhost:8000/api/v1/permits/process/upload` (multipart)
+  o `/process` con ruta bajo los volúmenes montados.
+
+### 1.4 (Opcional) WeasyPrint en Windows
 
 Solo si se quiere el renderer de alta calidad:
 

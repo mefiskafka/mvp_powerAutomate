@@ -86,6 +86,27 @@ python -m permits.presentation.cli.main process --pdf sample_data/pdfs/permiso_i
 
 Atajos: `scripts/run_sample.sh` (Linux/macOS) · `scripts/run_sample.ps1` (Windows).
 
+## Docker (opcional, recomendado)
+
+El motor completo encapsulado — sin instalar Python ni dependencias en el host:
+
+```bash
+docker compose up -d          # API en http://localhost:8000/docs
+# ¿Puerto 8000 ocupado?  PERMITS_API_PORT=8010 docker compose up -d
+
+# CLI one-shot (mismo contrato JSON):
+docker compose run --rm cli process --pdf sample_data/pdfs/permiso_ejemplo.pdf
+
+# Tests dentro del contenedor:
+docker compose --profile test run --rm tests
+```
+
+La persistencia vive en el **host** vía volúmenes (`data/` Excel, `logs/`,
+`sample_data/`): el contenedor es desechable, los datos no. Un orquestador
+(PAD, UiPath, lo que sea) consume el API por HTTP — con el endpoint `/upload`
+ni siquiera necesita compartir rutas con el contenedor. Ver
+[ADR-007](docs/adr/ADR-007-docker-compose.md).
+
 ## API (FastAPI)
 
 El mismo caso de uso, expuesto vía HTTP con el mismo contrato JSON:

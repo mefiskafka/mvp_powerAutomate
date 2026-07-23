@@ -1,0 +1,28 @@
+# Entornos y cachés
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Git y metadatos del repo
+.git/
+.gitignore
+.scars/
+
+# Salidas de ejecución (entran por volumen, no por imagen)
+logs/
+data/
+sample_data/expected_output/*.pdf
+
+# Secretos (entran por env_file en compose, nunca horneados en la imagen)
+.env
+
+# Docs y material que la imagen no necesita
+docs/
+power_automate/
+tests/
+scripts/
+CHANGELOG.md
+CONTRIBUTING.md

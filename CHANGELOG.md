@@ -12,6 +12,23 @@ y versionado [SemVer](https://semver.org/lang/es/).
 - OCR para PDFs escaneados (nueva implementación de `PdfExtractor`).
 - Migración Excel → base de datos (nueva implementación de `PermitRepository`).
 
+## [1.3.0] - 2026-07-22 — Docker Compose
+
+### Added
+- `Dockerfile` (python:3.12-slim, usuario sin privilegios) y `compose.yaml` con
+  tres servicios: `api` (residente con healthcheck), `cli` (one-shot) y `tests`
+  (pytest en contenedor). Persistencia en el host vía volúmenes.
+- Puerto del host parametrizado con `PERMITS_API_PORT` (default 8000).
+- `.dockerignore` (el `.env` y las salidas nunca se hornean en la imagen).
+- ADR-007 (Docker Compose) + secciones Docker en README y RUNBOOK §1.3.
+
+### Fixed
+- Precedencia de configuración: las variables de entorno ahora sí sobrescriben
+  a `config.yaml` (reordenamiento de fuentes en `Settings`); antes el YAML
+  silenciaba los `PERMITS_*` (scar registrado).
+- Los tests del API ya no escriben PDFs/filas en `sample_data/` ni `data/`:
+  redirigen sus salidas a directorios temporales.
+
 ## [1.2.0] - 2026-07-21 — Fase 3: Documentación profesional
 
 ### Added

@@ -1,0 +1,56 @@
+# =====================================================================
+# Orquestación local del motor de permisos.
+#
+#   docker compose up -d          → API en http://localhost:8000/docs
+#   docker compose run --rm cli process --pdf sample_data/pdfs/permiso_ejemplo.pdf
+#   docker compose --profile test run --rm tests
+#
+# La persistencia (Excel, logs, PDFs generados) vive en el HOST vía
+# volúmenes: el contenedor es desechable, los datos no.
+# =====================================================================
+
+services:
+  # ---- API FastAPI: lo que consume un orquestador vía HTTP -----------
+  api:
+    build: .
+    image: permits-rpa:latest
+    container_name: permits-api
+    ports:
+      # Puerto del host configurable: PERMITS_API_PORT=8010 docker compose up -d
+      - "${PERMITS_API_PORT:-8000}:8000"
+    env_file:
+      - path: .env
+        required: false        # el proyecto funciona sin .env (defaults + config.yaml)
+    volumes:
+      - ./data:/app/data                     # Excel maestro
+      - ./logs:/app/logs                     # logs diarios
+      - ./sample_data:/app/sample_data       # insumos y PDFs generados del MVP
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+
+  # ---- CLI one-shot: mismo contrato, sin servicio residente ----------
+  # Uso: docker compose run --rm cli process --pdf sample_data/pdfs/permiso_ejemplo.pdf
+  cli:
+    profiles: ["cli"]
+    image: permits-rpa:latest
+    build: .
+    entrypoint: ["python", "-m", "permits.presentation.cli.main"]
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./sample_data:/app/sample_data
+
+  # ---- Tests dentro del contenedor -----------------------------------
+  # Uso: docker compose --profile test run --rm tests
+  tests:
+    profiles: ["test"]
+    image: permits-rpa:latest
+    build: .
+    entrypoint: ["python", "-m", "pytest", "-q"]
+    volumes:
+      - ./tests:/app/tests:ro

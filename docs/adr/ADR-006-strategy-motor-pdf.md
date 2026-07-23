@@ -27,7 +27,7 @@ estrategia; valor desconocido → `ConfigurationError`.
 ## Consecuencias
 
 - `git clone` + `pip install` + correr: funciona siempre (fpdf2).
-- Quien quiera calidad HTML/CSS activa WeasyPrint siguiendo RUNBOOK §1.3, sin
+- Quien quiera calidad HTML/CSS activa WeasyPrint siguiendo RUNBOOK §1.4, sin
   tocar código.
 - Doble mantenimiento del layout del PDF — aceptado: el resumen es un documento
   corto y estable, y el patrón Strategy exhibido es en sí un objetivo del
